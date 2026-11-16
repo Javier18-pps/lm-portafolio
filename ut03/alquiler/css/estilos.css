@@ -1,0 +1,121 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  color: #333;
+}
+.cabecera {
+  background: #152a1d;
+  padding: 16px;
+}
+.menu a {
+  color: #ffffff;
+}
+.menu {
+  list-style: none;
+  margin: 8px 0 0;
+  padding: 0;
+  display: flex;
+  gap: 16px;
+}
+.contenido {
+  padding: 16px;
+}
+h1 {
+  font-size: 32px;
+  margin: 0 0 8px;
+}
+h2 {
+  font-size: 24px;
+  margin-top: 24px;
+}
+h3 {
+  font-size: 18px;
+  margin: 8px 0 4px;
+}
+p {
+  color: #333333;
+}
+.bici {
+  display: inline-block;
+  width: 300px;
+  vertical-align: top;
+}
+.lateral {
+  background: #f4ead8;
+  padding: 12px;
+  margin-top: 24px;
+}
+button {
+  display: inline-block;
+  background: #152a1d;
+  color: #fff;
+  padding: 8px 16px;
+  cursor: pointer;
+  border: 0;
+  font-size: 16px;
+}
+.pie {
+  background: #152a1d;
+  color: #ffffff;
+  padding: 12px;
+  font-size: 12px;
+}
+.lateral label {
+  display: block;
+  margin-bottom: 4px;
+  font-weight: bold;
+}
+/* Enlace para saltar al contenido: oculto hasta que recibe el foco */
+.saltar {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  background: #fff;
+  color: #152a1d;
+  padding: 8px 16px;
+  font-weight: bold;
+  z-index: 100;
+}
+.saltar:focus {
+  left: 8px;
+  top: 8px;
+}
+
+/* Foco siempre visible */
+:focus-visible {
+  outline: 3px solid #152a1d;
+  outline-offset: 2px;
+  box-shadow: 0 0 0 6px #e6945a;
+}
+.bici img {
+  width: 100%;
+  height: auto;
+}
+@media (max-width: 699px) {
+  .bici {
+    display: block;
+    width: 100%;
+  }
+}
+.tarifas {
+  border-collapse: collapse;
+}
+.tarifas caption {
+  text-align: left;
+  font-weight: bold;
+  padding-bottom: 8px;
+}
+.tarifas th,
+.tarifas td {
+  border: 1px solid #555;
+  padding: 6px 12px;
+  text-align: left;
+}
+.tarifas thead th {
+  background: #152a1d;
+  color: #fff;
+}
+.tarifas tfoot td {
+  font-size: 14px;
+  background: #f4ead8;
+}
