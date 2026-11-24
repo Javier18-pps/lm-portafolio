@@ -1,0 +1,207 @@
+/* ===== Formularios BiciRuta · UT4 ===== */
+:root {
+  --verde: #1b7f3b;
+  --rojo: #c0392b;
+  --azul: #1d4e89;
+  --gris: #555;
+  --fondo: #f4f6f8;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family:
+    system-ui,
+    -apple-system,
+    "Segoe UI",
+    Roboto,
+    sans-serif;
+  line-height: 1.5;
+  color: #222;
+  background: var(--fondo);
+}
+
+/* --- Cabecera con buscador --- */
+.cabecera {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1rem 1.5rem;
+  background: #fff;
+  border-bottom: 3px solid var(--azul);
+}
+.cabecera img {
+  max-width: 100%;
+  height: auto;
+}
+.buscador {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+}
+.buscador input {
+  width: 14rem;
+}
+
+main {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 1rem 1.5rem 3rem;
+}
+h1 {
+  color: var(--azul);
+}
+.nota {
+  color: var(--gris);
+}
+
+/* --- Grupos --- */
+fieldset {
+  background: #fff;
+  border: 1px solid #cfd6dd;
+  border-radius: 8px;
+  padding: 1rem 1.25rem;
+  margin: 0 0 1.25rem;
+  min-width: 0; /* por defecto un fieldset no encoge y se sale en móvil */
+}
+input[type="file"] {
+  max-width: 100%;
+}
+legend {
+  font-weight: 700;
+  color: var(--azul);
+  padding: 0 0.4rem;
+}
+fieldset.grupo {
+  border-style: dashed;
+  margin-top: 0.5rem;
+}
+fieldset:disabled {
+  opacity: 0.55;
+}
+
+.campo {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+}
+.campo label {
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+}
+.opcion {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 0.35rem 0;
+}
+.opcion-cuenta {
+  margin-bottom: 0.75rem;
+  font-weight: 600;
+}
+
+input,
+select,
+textarea,
+button {
+  font: inherit;
+}
+input:not([type="radio"], [type="checkbox"], [type="file"]),
+select,
+textarea {
+  padding: 0.5rem 0.6rem;
+  border: 2px solid #9aa5b1;
+  border-radius: 6px;
+  background: #fff;
+}
+textarea {
+  resize: vertical;
+}
+input[type="radio"],
+input[type="checkbox"] {
+  width: 1.15rem;
+  height: 1.15rem;
+}
+
+:focus-visible {
+  outline: 3px solid #f0a500;
+  outline-offset: 2px;
+}
+
+.ayuda {
+  color: var(--gris);
+  font-size: 0.9rem;
+}
+.contador {
+  align-self: flex-end;
+  font-size: 0.9rem;
+  color: var(--gris);
+}
+
+/* --- Estados de validación: solo después de que el usuario interactúe --- */
+input:user-invalid,
+select:user-invalid,
+textarea:user-invalid {
+  border-color: var(--rojo);
+  background: #fdf0ef;
+}
+input:user-valid,
+select:user-valid,
+textarea:user-valid {
+  border-color: var(--verde);
+}
+
+/* --- Botones --- */
+.botones {
+  display: flex;
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+button {
+  padding: 0.6rem 1.2rem;
+  border: 0;
+  border-radius: 6px;
+  background: var(--azul);
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+}
+button:hover {
+  background: #163c69;
+}
+button.secundario {
+  background: #e1e6eb;
+  color: #222;
+}
+
+.visualmente-oculto {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+/* --- Móvil --- */
+@media (max-width: 600px) {
+  .cabecera {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .buscador input {
+    width: 100%;
+  }
+  .botones {
+    flex-direction: column;
+  }
+  button {
+    width: 100%;
+  }
+}

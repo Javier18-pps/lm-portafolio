@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Alta de usuario en la red del centro</title>
+  <link rel="stylesheet" href="css/cita.css">
+  <script src="js/alta.js" defer></script>
+</head>
+<body>
+  <main>
+    <h1>Alta de usuario en la red del centro</h1>
+    <p class="nota">Rellena el formulario para obtener tu cuenta de acceso a los equipos, la wifi y la plataforma. Los campos con * son obligatorios.</p>
+
+    <!-- Método POST: el formulario lleva datos personales y una contraseña, que no deben
+         quedar en la URL, el historial ni los registros del servidor; además crea una cuenta
+         (tiene efectos), así que recargar no debe repetir el envío sin avisar.
+         (POST no cifra: en producción la página debe servirse por HTTPS.) -->
+    <form id="form-alta" action="https://httpbin.org/post" method="post">
+
+      <fieldset>
+        <legend>Datos del alumno</legend>
+
+        <div class="campo">
+          <label for="nombre">Nombre *</label>
+          <input type="text" id="nombre" name="nombre" required minlength="2" maxlength="40" autocomplete="given-name">
+        </div>
+
+        <div class="campo">
+          <label for="apellidos">Apellidos *</label>
+          <input type="text" id="apellidos" name="apellidos" required minlength="2" maxlength="60" autocomplete="family-name">
+        </div>
+
+        <div class="campo">
+          <label for="nia">NIA *</label>
+          <input type="text" id="nia" name="nia" required pattern="[0-9]{8}" inputmode="numeric"
+                 title="El NIA son 8 cifras" aria-describedby="ayuda-nia" maxlength="8">
+          <small id="ayuda-nia" class="ayuda">Número de Identificación del Alumno: 8 cifras.</small>
+        </div>
+
+        <div class="campo">
+          <label for="nacimiento">Fecha de nacimiento *</label>
+          <input type="date" id="nacimiento" name="nacimiento" required min="1940-01-01" aria-describedby="ayuda-nac">
+          <small id="ayuda-nac" class="ayuda">Debes tener al menos 16 años.</small>
+        </div>
+
+        <div class="campo">
+          <label for="correo">Correo electrónico *</label>
+          <input type="email" id="correo" name="correo" required autocomplete="email">
+        </div>
+
+        <div class="campo">
+          <label for="movil">Teléfono móvil</label>
+          <input type="tel" id="movil" name="movil" pattern="[67][0-9]{8}" title="9 cifras empezando por 6 o 7" maxlength="9" autocomplete="tel-national">
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>Estudios</legend>
+
+        <div class="campo">
+          <label for="ciclo">Ciclo *</label>
+          <select id="ciclo" name="ciclo" required>
+            <option value="">— Elige una opción —</option>
+            <option value="smr">CFGM Sistemas Microinformáticos y Redes</option>
+            <option value="asir">CFGS Administración de Sistemas Informáticos en Red</option>
+            <option value="daw">CFGS Desarrollo de Aplicaciones Web</option>
+            <option value="dam">CFGS Desarrollo de Aplicaciones Multiplataforma</option>
+          </select>
+        </div>
+
+        <fieldset class="grupo">
+          <legend>Curso *</legend>
+          <div class="opcion">
+            <input type="radio" id="curso1" name="curso" value="1" required>
+            <label for="curso1">1.º</label>
+          </div>
+          <div class="opcion">
+            <input type="radio" id="curso2" name="curso" value="2">
+            <label for="curso2">2.º</label>
+          </div>
+        </fieldset>
+
+        <div class="campo">
+          <label for="dispositivos">Dispositivos propios para la wifi *</label>
+          <input type="number" id="dispositivos" name="dispositivos" required min="1" max="3" step="1" value="1" aria-describedby="ayuda-disp">
+          <small id="ayuda-disp" class="ayuda">Entre 1 y 3 (portátil, móvil, tablet).</small>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>Cuenta de acceso</legend>
+
+        <div class="campo">
+          <label for="usuario">Nombre de usuario *</label>
+          <input type="text" id="usuario" name="usuario" required pattern="[a-z][a-z0-9._]{3,15}"
+                 title="De 4 a 16 caracteres: empieza por letra minúscula y solo usa minúsculas, números, punto o guion bajo"
+                 aria-describedby="ayuda-usuario" autocomplete="username">
+          <small id="ayuda-usuario" class="ayuda">4–16 caracteres: minúsculas, números, «.» o «_». Empieza por letra.</small>
+        </div>
+
+        <div class="campo">
+          <label for="clave">Contraseña *</label>
+          <input type="password" id="clave" name="clave" required minlength="8"
+                 pattern="(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9]).{8,}"
+                 title="Mínimo 8 caracteres con mayúsculas, minúsculas y números"
+                 aria-describedby="ayuda-clave" autocomplete="new-password">
+          <small id="ayuda-clave" class="ayuda">Mínimo 8 caracteres, con mayúsculas, minúsculas y números.</small>
+        </div>
+
+        <div class="campo">
+          <label for="clave2">Repite la contraseña *</label>
+          <input type="password" id="clave2" name="clave2" required autocomplete="new-password">
+        </div>
+      </fieldset>
+
+      <div class="opcion">
+        <input type="checkbox" id="normas" name="normas" value="acepto" required>
+        <label for="normas">Acepto las normas de uso de la red del centro *</label>
+      </div>
+
+      <div class="botones">
+        <button type="submit">Solicitar alta</button>
+        <button type="reset" class="secundario">Borrar</button>
+      </div>
+    </form>
+  </main>
+</body>
+</html>
