@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Inventario de los equipos de red del aula de ASIR 1 · validado con inventario.xsd -->
+<inventario xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            xsi:noNamespaceSchemaLocation="inventario.xsd"
+            aula="Aula ASIR 1" centro="thePower" actualizado="2026-11-24">
+
+  <equipo id="EQ-01" tipo="router" estado="operativo">
+    <modelo>MikroTik hEX RB750Gr3</modelo>
+    <ip>192.168.10.1</ip>
+    <mac>4C:5E:0C:12:A0:01</mac>
+    <ubicacion rack="R1">Armario de comunicaciones</ubicacion>
+    <fechaCompra>2024-09-02</fechaCompra>
+    <puertos>5</puertos>
+  </equipo>
+
+  <equipo id="EQ-02" tipo="switch" estado="operativo">
+    <modelo>Cisco Catalyst 2960-24TT</modelo>
+    <ip>192.168.10.2</ip>
+    <mac>00:1B:54:3C:7D:02</mac>
+    <ubicacion rack="R1">Armario de comunicaciones</ubicacion>
+    <fechaCompra>2023-10-15</fechaCompra>
+    <puertos>24</puertos>
+  </equipo>
+
+  <equipo id="EQ-03" tipo="punto-acceso" estado="operativo">
+    <modelo>Ubiquiti UniFi U6 Lite</modelo>
+    <ip>192.168.10.3</ip>
+    <mac>F4:92:BF:6A:11:03</mac>
+    <ubicacion>Techo, centro del aula</ubicacion>
+    <fechaCompra>2025-01-20</fechaCompra>
+    <puertos>1</puertos>
+  </equipo>
+
+  <equipo id="EQ-04" tipo="servidor" estado="operativo">
+    <modelo>Dell PowerEdge T150</modelo>
+    <ip>192.168.10.10</ip>
+    <mac>B0:7B:25:4E:90:04</mac>
+    <ubicacion rack="R1">Armario de comunicaciones</ubicacion>
+    <fechaCompra>2024-02-28</fechaCompra>
+    <puertos>2</puertos>
+  </equipo>
+
+  <equipo id="EQ-05" tipo="servidor" estado="mantenimiento">
+    <modelo>Synology DS220+ (NAS)</modelo>
+    <ip>192.168.10.11</ip>
+    <mac>00:11:32:AB:CD:05</mac>
+    <ubicacion rack="R1">Armario de comunicaciones</ubicacion>
+    <fechaCompra>2022-11-03</fechaCompra>
+    <puertos>2</puertos>
+  </equipo>
+
+  <equipo id="EQ-06" tipo="impresora" estado="operativo">
+    <modelo>HP LaserJet Pro M404dn</modelo>
+    <ip>192.168.10.20</ip>
+    <mac>3C:52:82:7F:21:06</mac>
+    <ubicacion>Mesa del profesor</ubicacion>
+    <fechaCompra>2023-03-09</fechaCompra>
+    <puertos>1</puertos>
+  </equipo>
+
+</inventario>

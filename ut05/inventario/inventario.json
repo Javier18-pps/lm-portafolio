@@ -1,0 +1,89 @@
+{
+  "aula": "Aula ASIR 1",
+  "centro": "thePower",
+  "actualizado": "2026-11-24",
+  "equipos": [
+    {
+      "id": "EQ-01",
+      "tipo": "router",
+      "estado": "operativo",
+      "modelo": "MikroTik hEX RB750Gr3",
+      "ip": "192.168.10.1",
+      "mac": "4C:5E:0C:12:A0:01",
+      "ubicacion": {
+        "lugar": "Armario de comunicaciones",
+        "rack": "R1"
+      },
+      "fechaCompra": "2024-09-02",
+      "puertos": 5
+    },
+    {
+      "id": "EQ-02",
+      "tipo": "switch",
+      "estado": "operativo",
+      "modelo": "Cisco Catalyst 2960-24TT",
+      "ip": "192.168.10.2",
+      "mac": "00:1B:54:3C:7D:02",
+      "ubicacion": {
+        "lugar": "Armario de comunicaciones",
+        "rack": "R1"
+      },
+      "fechaCompra": "2023-10-15",
+      "puertos": 24
+    },
+    {
+      "id": "EQ-03",
+      "tipo": "punto-acceso",
+      "estado": "operativo",
+      "modelo": "Ubiquiti UniFi U6 Lite",
+      "ip": "192.168.10.3",
+      "mac": "F4:92:BF:6A:11:03",
+      "ubicacion": {
+        "lugar": "Techo, centro del aula"
+      },
+      "fechaCompra": "2025-01-20",
+      "puertos": 1
+    },
+    {
+      "id": "EQ-04",
+      "tipo": "servidor",
+      "estado": "operativo",
+      "modelo": "Dell PowerEdge T150",
+      "ip": "192.168.10.10",
+      "mac": "B0:7B:25:4E:90:04",
+      "ubicacion": {
+        "lugar": "Armario de comunicaciones",
+        "rack": "R1"
+      },
+      "fechaCompra": "2024-02-28",
+      "puertos": 2
+    },
+    {
+      "id": "EQ-05",
+      "tipo": "servidor",
+      "estado": "mantenimiento",
+      "modelo": "Synology DS220+ (NAS)",
+      "ip": "192.168.10.11",
+      "mac": "00:11:32:AB:CD:05",
+      "ubicacion": {
+        "lugar": "Armario de comunicaciones",
+        "rack": "R1"
+      },
+      "fechaCompra": "2022-11-03",
+      "puertos": 2
+    },
+    {
+      "id": "EQ-06",
+      "tipo": "impresora",
+      "estado": "operativo",
+      "modelo": "HP LaserJet Pro M404dn",
+      "ip": "192.168.10.20",
+      "mac": "3C:52:82:7F:21:06",
+      "ubicacion": {
+        "lugar": "Mesa del profesor"
+      },
+      "fechaCompra": "2023-03-09",
+      "puertos": 1
+    }
+  ]
+}

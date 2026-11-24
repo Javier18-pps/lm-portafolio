@@ -1,0 +1,34 @@
+<!-- ===== catalogo.dtd · Gramática del catálogo de BiciRuta ===== -->
+
+<!-- La raíz contiene uno o más productos (cardinalidad +) -->
+<!ELEMENT catalogo (producto+)>
+<!ATTLIST catalogo
+  tienda      CDATA  #REQUIRED
+  actualizado CDATA  #REQUIRED>
+
+<!-- Orden fijo: nombre, precio, stock; descripción y características opcionales (?) -->
+<!ELEMENT producto (nombre, precio, stock, descripcion?, caracteristicas?)>
+<!ATTLIST producto
+  ref        ID                                   #REQUIRED
+  categoria  (bicicleta | accesorio | recambio)   #REQUIRED
+  proveedor  CDATA                                #IMPLIED>
+<!-- ref: tipo ID → obligatoria y única en todo el documento
+     categoria: enumeración, solo admite esos tres valores
+     proveedor: #IMPLIED → opcional -->
+
+<!ELEMENT nombre      (#PCDATA)>
+<!ELEMENT precio      (#PCDATA)>
+<!-- moneda: EUR o USD; si no se indica, el analizador asume EUR -->
+<!ATTLIST precio
+  moneda  (EUR | USD)  "EUR">
+
+<!ELEMENT stock       (#PCDATA)>
+<!ELEMENT descripcion (#PCDATA)>
+
+<!-- Talla y peso, ambos opcionales -->
+<!ELEMENT caracteristicas (talla?, peso?)>
+<!ELEMENT talla (#PCDATA)>
+<!ELEMENT peso  (#PCDATA)>
+<!-- El peso siempre está en kg: #FIXED no permite otro valor -->
+<!ATTLIST peso
+  unidad  CDATA  #FIXED "kg">
