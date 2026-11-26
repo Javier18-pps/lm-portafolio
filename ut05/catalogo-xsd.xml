@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Catálogo de BiciRuta S.L. · bien formado y válido contra catalogo.xsd -->
-<catalogo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-          xsi:noNamespaceSchemaLocation="catalogo.xsd"
-          tienda="BiciRuta S.L." actualizado="2026-10-01">
+<catalogo tienda="BiciRuta S.L." actualizado="2026-10-01"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:noNamespaceSchemaLocation="catalogo.xsd">
 
   <producto ref="BR-0101" categoria="bicicleta" proveedor="Ciclos del Norte S.A.">
     <nombre>Bici Urbana U100</nombre>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE catalogo SYSTEM "../catalogo.dtd">
-<!-- Catálogo de BiciRuta S.L. · bien formado y válido contra catalogo.dtd -->
+<!-- Prueba R7_dtd: precio antes que nombre en BR-0202 (debe ser rechazado) -->
 <catalogo tienda="BiciRuta S.L." actualizado="2026-10-01">
 
   <producto ref="BR-0101" categoria="bicicleta" proveedor="Ciclos del Norte S.A.">
@@ -47,7 +47,6 @@
     </caracteristicas>
   </producto>
 
-  <!-- PRUEBA R7: precio antes que nombre -->
   <producto ref="BR-0202" categoria="accesorio" proveedor="Accesorios Ruta S.L.">
     <precio moneda="EUR">29.95</precio>
     <nombre>Candado U Pro</nombre>

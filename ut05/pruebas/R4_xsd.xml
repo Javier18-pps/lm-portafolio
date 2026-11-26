@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Catálogo de BiciRuta S.L. · bien formado y válido contra catalogo.xsd -->
-<catalogo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-          xsi:noNamespaceSchemaLocation="../catalogo.xsd"
-          tienda="BiciRuta S.L." actualizado="2026-10-01">
+<!-- Prueba R4_xsd: Sin elemento stock en BR-0202 (debe ser rechazado) -->
+<catalogo tienda="BiciRuta S.L." actualizado="2026-10-01"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:noNamespaceSchemaLocation="../catalogo.xsd">
 
   <producto ref="BR-0101" categoria="bicicleta" proveedor="Ciclos del Norte S.A.">
     <nombre>Bici Urbana U100</nombre>
@@ -48,7 +48,6 @@
     </caracteristicas>
   </producto>
 
-  <!-- PRUEBA R4: sin elemento stock -->
   <producto ref="BR-0202" categoria="accesorio" proveedor="Accesorios Ruta S.L.">
     <nombre>Candado U Pro</nombre>
     <precio moneda="EUR">29.95</precio>
