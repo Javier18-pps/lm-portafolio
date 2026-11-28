@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reto de especificidad</title>
+  <style>
+    /* A */ p                      { color: black; }
+    /* B */ .precio               { color: green !important; }
+    /* C */ main article p         { color: blue; }
+    /* D  .producto .precio      { color: orange; } */
+    /* E  #precio-u100           { color: red; } */
+    /* F  p.precio.oferta        { color: purple; } */
+    /* G */ .precio                { color: brown; }
+    /* H */ article                { color: teal; border: 2px solid teal; padding: 8px; }
+  </style>
+</head>
+<body>
+  <main>
+    <article class="producto">
+      <h3>Bici Urbana U100</h3>
+      <p id="precio-u100" class="precio oferta" style="color: gray">389,00 €</p>
+      <span class="nota">Precio con IVA</span>
+    </article>
+  </main>
+</body>
+</html>

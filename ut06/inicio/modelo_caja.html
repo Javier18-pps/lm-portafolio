@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Laboratorio del modelo de caja</title>
+  <style>
+    body { font-family: system-ui, sans-serif; margin: 24px; }
+    .caja { width: 300px; padding: 20px; border: 5px solid #152A1D; margin-bottom: 16px; background: #F4EAD8; }
+    .a { box-sizing: content-box; }
+    .b { box-sizing: border-box; }
+    .p1 { margin-bottom: 30px; background: #DCE8DF; }
+    .p2 { margin-top: 20px; background: #F4EAD8; }
+  </style>
+</head>
+<body>
+  <h1>Laboratorio del modelo de caja</h1>
+  <div class="caja a">Caja A · <code>box-sizing: content-box</code></div>
+  <div class="caja b">Caja B · <code>box-sizing: border-box</code></div>
+  <p class="p1">Párrafo 1 · margin-bottom: 30px</p>
+  <p class="p2">Párrafo 2 · margin-top: 20px</p>
+</body>
+</html>

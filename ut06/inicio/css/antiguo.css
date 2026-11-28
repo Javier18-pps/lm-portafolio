@@ -1,0 +1,5 @@
+/* Hoja antigua: estilos acumulados durante años. No la borres hasta terminar la Fase 1. */
+body { font-family: "Comic Sans MS", cursive; }
+h1 { color: red; }
+#catalogo h2 { text-decoration: underline; }
+.precio { color: green !important; }

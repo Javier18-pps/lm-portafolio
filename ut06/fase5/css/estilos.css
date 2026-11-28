@@ -1,0 +1,290 @@
+/* ==========================================================
+   Salida en bici por el Parque del Retiro · ASIR 1
+   Hoja de estilos de la Práctica 06 (LM UT6) · Fase 5
+   Autor: Luis Javier López Lachapel
+   ----------------------------------------------------------
+   Contrastes medidos (WCAG 2.x, nivel AA = 4,5:1 texto normal):
+     Blanco #FFFFFF sobre verde #0B3D2E ...... 12,20:1  AA ✔ (cabecera, pie, botón)
+     Texto #222222 sobre blanco .............. 15,91:1  AA ✔ (texto general)
+     Texto #222222 sobre verde claro #EEF4EF . 14,26:1  AA ✔ (inscripción)
+     Verde #0B3D2E sobre amarillo #F2B134 .... 6,46:1   AA ✔ (botón en :hover)
+     Amarillo #F2B134 sobre verde #0B3D2E .... 6,46:1   AA ✔ (enlace actual del menú)
+     Gris #4A4A4A sobre blanco ............... 8,86:1   AA ✔ (pies de foto y notas)
+   ========================================================== */
+
+/* ---------- 1. Base: modelo de caja y tamaños en rem ---------- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 100%;
+}
+
+/* Selector de etiqueta */
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #222222;
+  background-color: #ffffff;
+}
+
+h1,
+h2,
+h3 {
+  line-height: 1.2;
+  color: #0B3D2E;
+}
+
+h1 { font-size: 2.25rem; margin: 0 0 1rem; }
+h2 { font-size: 1.5rem; margin: 2.5rem 0 1rem; }
+h3 { font-size: 1.125rem; margin: 0.75rem 0 0.5rem; }
+
+img,
+video {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* ---------- 2. Enlace para saltar al contenido ---------- */
+.saltar {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  padding: 0.5rem 1rem;
+  background-color: #ffffff;
+  color: #0B3D2E;
+  font-weight: 700;
+  z-index: 100;
+}
+
+/* Pseudoclase */
+.saltar:focus {
+  left: 0.5rem;
+  top: 0.5rem;
+}
+
+/* ---------- 3. Cabecera y menú ---------- */
+.cabecera {
+  background-color: #0B3D2E;
+  color: #ffffff;
+  padding: 1rem 1.5rem;
+}
+
+.marca {
+  margin: 0 0 0.5rem;
+  font-size: 1.375rem;
+  font-weight: 700;
+}
+
+.menu {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* Combinador hijo: solo los li directos del menú, en línea */
+.menu > li {
+  display: inline-block;
+  margin-right: 1.25rem;
+}
+
+.menu a {
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.menu a:hover {
+  text-decoration: underline;
+}
+
+/* Selector de atributo: la sección actual en amarillo (6,46:1) */
+.menu a[aria-current="page"] {
+  color: #F2B134;
+  border-bottom: 2px solid #F2B134;
+}
+
+/* ---------- 4. Contenido centrado con ancho máximo ---------- */
+/* Selector de id */
+#principal {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem 1rem;
+}
+
+/* Combinador hermano adyacente: la entradilla bajo el h1 */
+h1 + p {
+  font-size: 1.125rem;
+  margin-bottom: 1.5rem;
+}
+
+/* ----------------------------------------------------------
+   DEMOSTRACIÓN DE ESPECIFICIDAD (color de los títulos h2)
+     h2              (0,0,1) → verde #0B3D2E   (regla de arriba)
+     section h2      (0,0,2) → gana a h2: borde inferior amarillo
+     #horario h2     (1,0,1) → gana a las dos: solo el h2 del
+                               horario sale en #222222, aunque
+                               "section h2" vaya escrita después
+   ---------------------------------------------------------- */
+#horario h2 {
+  color: #222222;
+}
+
+section h2 {
+  color: #0B3D2E;
+  border-bottom: 3px solid #F2B134;
+  padding-bottom: 0.25rem;
+}
+
+/* ---------- 5. Fichas del recorrido (modelo de caja) ---------- */
+/* Selector de clase */
+.ficha {
+  display: inline-block;
+  vertical-align: top;
+  width: 400px;
+  max-width: 100%;
+  padding: 1rem;
+  margin: 0 1rem 1rem 0;
+  border: 1px solid #c9d6cc;
+  border-radius: 0.75rem;
+  background-color: #ffffff;
+}
+
+/* Combinador descendiente */
+.ficha img {
+  border-radius: 0.5rem;
+}
+
+.ficha ul {
+  padding-left: 1.25rem;
+  margin: 0;
+}
+
+/* Pseudoclase estructural: las fichas pares con fondo verde claro */
+.ficha:nth-of-type(even) {
+  background-color: #EEF4EF;
+}
+
+/* ---------- 6. Tabla del horario ---------- */
+.horario {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.horario caption {
+  text-align: left;
+  font-weight: 700;
+  padding-bottom: 0.5rem;
+}
+
+.horario th,
+.horario td {
+  border: 1px solid #c9d6cc;
+  padding: 0.5rem 0.75rem;
+  text-align: left;
+}
+
+.horario thead th {
+  background-color: #0B3D2E;
+  color: #ffffff;
+}
+
+.horario tbody tr:nth-child(even) {
+  background-color: #F7FAF7;
+}
+
+.horario tfoot td {
+  font-size: 0.875rem;
+  color: #4A4A4A;
+  background-color: #EEF4EF;
+}
+
+/* ---------- 7. Vídeo ---------- */
+figure {
+  margin: 0;
+}
+
+figcaption {
+  font-size: 0.875rem;
+  color: #4A4A4A;
+  margin-top: 0.5rem;
+}
+
+/* ---------- 8. Inscripción ---------- */
+#inscripcion {
+  max-width: calc(900px - 3rem); /* mismo ancho que el contenido del main */
+  margin: 1rem auto 2.5rem;
+  padding: 1.5rem;
+  border-left: 6px solid #F2B134;
+  border-radius: 0.5rem;
+  background-color: #EEF4EF;
+}
+
+#inscripcion h2 {
+  margin-top: 0;
+}
+
+.lateral label {
+  display: block;
+  font-weight: 700;
+  margin-top: 0.75rem;
+}
+
+.lateral input {
+  width: 100%;
+  max-width: 26rem;
+  padding: 0.5rem;
+  border: 1px solid #555555;
+  border-radius: 0.375rem;
+  font-size: 1rem;
+}
+
+/* Selector de atributo en los campos */
+input[required] {
+  border-left: 4px solid #0B3D2E;
+}
+
+button {
+  display: block;
+  margin-top: 1rem;
+  padding: 0.6rem 1.25rem;
+  border: 2px solid #0B3D2E;
+  border-radius: 0.5rem;
+  background-color: #0B3D2E;
+  color: #ffffff;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+/* Pseudoclase :hover (verde sobre amarillo, 6,46:1) */
+button:hover {
+  background-color: #F2B134;
+  color: #0B3D2E;
+}
+
+/* ---------- 9. Pie ---------- */
+.pie {
+  background-color: #0B3D2E;
+  color: #ffffff;
+  padding: 1rem 1.5rem;
+  font-size: 0.875rem;
+  text-align: center;
+}
+
+.pie p {
+  margin: 0;
+}
+
+/* ---------- 10. Foco visible para el teclado ---------- */
+:focus-visible {
+  outline: 3px solid #0B3D2E;
+  outline-offset: 2px;
+  box-shadow: 0 0 0 6px #F2B134;
+}

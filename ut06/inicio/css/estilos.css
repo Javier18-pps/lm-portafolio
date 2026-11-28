@@ -1,0 +1,231 @@
+/* ==========================================================
+   BiciRuta · Hoja de estilos única (Práctica 06 · LM UT6)
+   Autor: Luis Javier López Lachapel · ASIR 1
+   ----------------------------------------------------------
+   Paleta de marca y contrastes medidos (WCAG 2.x):
+     Texto #222222 sobre blanco ........ 15,91:1  AA ✔
+     Crema #F4EAD8 sobre verde #152A1D . 12,75:1  AA ✔
+     Naranja #E6945A sobre verde ....... 6,34:1   AA ✔
+     Verde #152A1D sobre naranja ....... 6,34:1   AA ✔ (botones)
+     Naranja oscuro #A4501E sobre blanco 5,61:1   AA ✔ (precios en oferta)
+     Gris #595959 sobre blanco ......... 7,00:1   AA ✔ (precio tachado)
+     Naranja #E6945A sobre blanco ...... 2,40:1   ✘  -> solo bordes y fondos
+   ========================================================== */
+
+/* ---------- 1. Base: modelo de caja y tamaño raíz ---------- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 100%; /* respeta el tamaño de letra elegido en el navegador */
+}
+
+body {
+  margin: 0;
+  font-family: "Poppins", system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #222222;
+  background-color: #ffffff;
+}
+
+h1,
+h2,
+h3 {
+  line-height: 1.2;
+  color: #152A1D;
+  margin: 0 0 0.75rem;
+}
+
+h1 { font-size: 2.5rem; font-weight: 700; }
+h2 { font-size: 1.75rem; font-weight: 600; }
+h3 { font-size: 1.25rem; font-weight: 600; }
+
+p {
+  margin: 0 0 1rem;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  color: #152A1D;
+}
+
+/* ---------- 2. Cabecera y menú ---------- */
+.cabecera {
+  background-color: #152A1D;
+  color: #F4EAD8;
+  padding: 1rem 1.5rem;
+}
+
+.cabecera img {
+  width: 16rem;
+  margin-bottom: 0.5rem;
+}
+
+.menu {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* S3 · Combinador hijo: solo los li hijos directos del menú, en línea */
+.menu > li {
+  display: inline-block;
+  margin-right: 1.25rem;
+}
+
+.menu a {
+  color: #F4EAD8;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.menu a:hover {
+  text-decoration: underline;
+}
+
+/* S2 · Atributo: el enlace de la página actual en naranja
+   (naranja sobre verde = 6,34:1, AA) */
+.menu a[aria-current="page"] {
+  color: #E6945A;
+  border-bottom: 2px solid #E6945A;
+}
+
+/* S1 · Atributo + ::after: los enlaces externos muestran « ↗» */
+a[href^="http"]::after {
+  content: " ↗";
+}
+
+/* ---------- 3. Contenido principal centrado ---------- */
+main {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+}
+
+.portada {
+  background-color: #F4EAD8;
+  border-radius: 0.75rem;
+  padding: 2rem;
+  margin-bottom: 2rem;
+}
+
+/* S4 · Hermano adyacente: el párrafo justo después del h1, más grande */
+h1 + p {
+  font-size: 1.25rem;
+}
+
+/* ---------- 4. Botones ---------- */
+.boton {
+  display: inline-block;
+  padding: 0.6rem 1.2rem;
+  border: 2px solid #E6945A;
+  border-radius: 0.5rem;
+  background-color: #E6945A;
+  color: #152A1D; /* 6,34:1 sobre el naranja */
+  font-weight: 600;
+  text-decoration: none;
+}
+
+/* S8 · Pseudoclases: cambio al pasar el ratón y foco visible con teclado */
+.boton:hover {
+  background-color: #152A1D;
+  color: #F4EAD8;
+}
+
+.boton:focus-visible {
+  outline: 3px solid #152A1D;
+  outline-offset: 3px;
+}
+
+/* ---------- 5. Catálogo: tarjetas con el modelo de caja ---------- */
+#catalogo h2 {
+  border-bottom: 3px solid #E6945A;
+  padding-bottom: 0.25rem;
+}
+
+.producto {
+  display: inline-block;
+  vertical-align: top;
+  width: 250px;
+  padding: 1rem;
+  margin: 0 0.5rem 1.5rem 0;
+  border: 1px solid #d0d0d0;
+  border-radius: 0.75rem;
+  background-color: #ffffff;
+  position: relative;
+}
+
+.producto img {
+  border-radius: 0.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.precio {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #152A1D;
+}
+
+/* S5 · :nth-of-type(even): tarjetas pares con fondo crema claro */
+.producto:nth-of-type(even) {
+  background-color: #FBF6EE;
+}
+
+/* S6 · Dos clases: tarjetas en oferta con borde naranja y etiqueta */
+.producto.oferta {
+  border: 2px solid #E6945A;
+}
+
+.producto.oferta::before {
+  content: "OFERTA";
+  position: absolute;
+  top: -0.75rem;
+  right: 1rem;
+  padding: 0.1rem 0.6rem;
+  border-radius: 0.25rem;
+  background-color: #E6945A;
+  color: #152A1D;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+}
+
+.producto.oferta .precio {
+  color: #A4501E; /* naranja oscuro, 5,61:1 sobre blanco */
+}
+
+/* S7 · Descendiente: el precio antiguo tachado, más pequeño y gris */
+.precio del {
+  font-size: 0.875rem;
+  font-weight: 400;
+  color: #595959; /* 7:1 sobre blanco */
+  margin-right: 0.25rem;
+}
+
+/* ---------- 6. Aviso y pie ---------- */
+.aviso {
+  background-color: #F4EAD8;
+  border-left: 6px solid #E6945A;
+  border-radius: 0.5rem;
+  padding: 1.25rem 1.5rem;
+}
+
+.pie {
+  background-color: #152A1D;
+  color: #F4EAD8;
+  padding: 1rem 1.5rem;
+  text-align: center;
+}
+
+.pie a {
+  color: #E6945A;
+}

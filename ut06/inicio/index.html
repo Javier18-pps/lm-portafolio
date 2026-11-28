@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BiciRuta · Tienda de bicicletas</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap">
+  <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+  <header class="cabecera">
+    <img src="img/logo_biciruta.png" alt="BiciRuta" width="320" height="80">
+    <nav aria-label="Principal">
+      <ul class="menu">
+        <li><a href="index.html" aria-current="page">Tienda</a></li>
+        <li><a href="taller.html">Taller</a></li>
+        <li><a href="alquiler.html">Alquiler</a></li>
+        <li><a href="https://www.openstreetmap.org" target="_blank" rel="noopener noreferrer">Cómo llegar</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="portada">
+      <h1>Bicicletas para moverte por la ciudad</h1>
+      <p class="entradilla">Bicis urbanas, de montaña y eléctricas, accesorios y un taller propio con presupuesto previo.</p>
+      <a class="boton" href="#catalogo">Ver catálogo</a>
+    </section>
+
+    <section id="catalogo" class="catalogo">
+      <h2>Catálogo</h2>
+      <article class="producto">
+        <img src="img/bici_urbana.jpg" alt="Bici Urbana U100" width="800" height="600">
+        <h3>Bici Urbana U100</h3>
+        <p class="descripcion">Cuadro de aluminio, cesta delantera y luces.</p>
+        <p class="precio">389,00&nbsp;€</p>
+        <a class="boton" href="#">Añadir al carrito</a>
+      </article>
+      <article class="producto oferta">
+        <img src="img/bici_montana.jpg" alt="Bici Montaña M300" width="800" height="600">
+        <h3>Bici Montaña M300</h3>
+        <p class="descripcion">Horquilla de suspensión de 100&nbsp;mm.</p>
+        <p class="precio"><del>699,00&nbsp;€</del> 649,00&nbsp;€</p>
+        <a class="boton" href="#">Añadir al carrito</a>
+      </article>
+      <article class="producto">
+        <img src="img/bici_electrica.jpg" alt="E-Bike City E500" width="800" height="600">
+        <h3>E-Bike City E500</h3>
+        <p class="descripcion">Motor de 250&nbsp;W y 70&nbsp;km de autonomía.</p>
+        <p class="precio">1.490,00&nbsp;€</p>
+        <a class="boton" href="#">Añadir al carrito</a>
+      </article>
+      <article class="producto oferta">
+        <img src="img/casco.jpg" alt="Casco Urban M" width="800" height="600">
+        <h3>Casco Urban M</h3>
+        <p class="descripcion">Talla M (54-58&nbsp;cm), ajuste trasero.</p>
+        <p class="precio"><del>45,00&nbsp;€</del> 39,90&nbsp;€</p>
+        <a class="boton" href="#">Añadir al carrito</a>
+      </article>
+      <article class="producto">
+        <img src="img/candado.jpg" alt="Candado U Pro" width="800" height="600">
+        <h3>Candado U Pro</h3>
+        <p class="descripcion">Acero templado, nivel de seguridad 8/10.</p>
+        <p class="precio">29,95&nbsp;€</p>
+        <a class="boton" href="#">Añadir al carrito</a>
+      </article>
+    </section>
+
+    <aside class="aviso">
+      <h2>Taller con cita previa</h2>
+      <p>Revisión básica por 25&nbsp;€. <a href="taller.html">Pide tu cita</a>.</p>
+    </aside>
+  </main>
+
+  <footer class="pie">
+    <p>BiciRuta S.L. · Calle del Pedal, 12 · 28010 Madrid · <a href="mailto:hola@biciruta.example">hola@biciruta.example</a></p>
+  </footer>
+</body>
+</html>
